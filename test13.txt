@@ -1,0 +1,15 @@
+Schemes:
+  X(y)
+  Y(z)
+  R(a,b)
+
+Facts:
+  X('1').
+  X('2').
+  Y('3').
+
+Rules:
+  R(q,w) :- X(q), X(w).
+
+Queries:
+  R(A,B)?

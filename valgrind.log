@@ -1,0 +1,160 @@
+==978== Memcheck, a memory error detector
+==978== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==978== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==978== Command: ./lab4 testlong.txt
+==978== Parent PID: 22887
+==978== 
+--978-- 
+--978-- Valgrind options:
+--978--    -v
+--978--    --tool=memcheck
+--978--    --leak-check=full
+--978--    --num-callers=40
+--978--    --log-file=valgrind.log
+--978-- Contents of /proc/version:
+--978--   Linux version 4.4.0-17134-Microsoft (Microsoft@Microsoft.com) (gcc version 5.4.0 (GCC) ) #648-Microsoft Tue Mar 05 18:57:00 PST 2019
+--978-- 
+--978-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--978-- Page sizes: currently 4096, max supported 4096
+--978-- Valgrind library directory: /usr/lib/valgrind
+--978-- Reading syms from /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4
+--978-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
+--978--   Considering /lib/x86_64-linux-gnu/ld-2.27.so ..
+--978--   .. CRC mismatch (computed 1b7c895e wanted 2943108a)
+--978--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.27.so ..
+--978--   .. CRC is valid
+--978-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--978--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--978--   .. CRC mismatch (computed c25f395c wanted 0a9602a8)
+--978--    object doesn't have a symbol table
+--978--    object doesn't have a dynamic symbol table
+--978-- Scheduler: using generic scheduler lock implementation.
+--978-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==978== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-978-by-taylor-on-???
+==978== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-978-by-taylor-on-???
+==978== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-978-by-taylor-on-???
+==978== 
+==978== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==978== don't want to do, unless you know exactly what you're doing,
+==978== or are doing some strange experiment):
+==978==   /usr/lib/valgrind/../../bin/vgdb --pid=978 ...command...
+==978== 
+==978== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==978==   /path/to/gdb ./lab4
+==978== and then give GDB the following command
+==978==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=978
+==978== --pid is optional if only one valgrind process is running
+==978== 
+==978== error calling PR_SET_PTRACER, vgdb might block
+--978-- REDIR: 0x401f2f0 (ld-linux-x86-64.so.2:strlen) redirected to 0x58060901 (???)
+--978-- REDIR: 0x401f0d0 (ld-linux-x86-64.so.2:index) redirected to 0x5806091b (???)
+--978-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--978--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--978--   .. CRC mismatch (computed 4b63d83e wanted 670599e6)
+--978--    object doesn't have a symbol table
+--978-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--978--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--978--   .. CRC mismatch (computed a4b37bee wanted 8ad4dc94)
+--978--    object doesn't have a symbol table
+==978== WARNING: new redirection conflicts with existing -- ignoring it
+--978--     old: 0x0401f2f0 (strlen              ) R-> (0000.0) 0x58060901 ???
+--978--     new: 0x0401f2f0 (strlen              ) R-> (2007.0) 0x04c32db0 strlen
+--978-- REDIR: 0x401d360 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c33ee0 (strcmp)
+--978-- REDIR: 0x401f830 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c374f0 (mempcpy)
+--978-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+--978--    object doesn't have a symbol table
+--978-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
+--978--    object doesn't have a symbol table
+--978-- Reading syms from /lib/x86_64-linux-gnu/libc-2.27.so
+--978--   Considering /lib/x86_64-linux-gnu/libc-2.27.so ..
+--978--   .. CRC mismatch (computed b1c74187 wanted 042cc048)
+--978--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.27.so ..
+--978--   .. CRC is valid
+--978-- Reading syms from /lib/x86_64-linux-gnu/libm-2.27.so
+--978--   Considering /lib/x86_64-linux-gnu/libm-2.27.so ..
+--978--   .. CRC mismatch (computed 7feae033 wanted b29b2508)
+--978--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.27.so ..
+--978--   .. CRC is valid
+--978-- REDIR: 0x547bc70 (libc.so.6:memmove) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547ad40 (libc.so.6:strncpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547bf50 (libc.so.6:strcasecmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547a790 (libc.so.6:strcat) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547ad70 (libc.so.6:rindex) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547d7c0 (libc.so.6:rawmemchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547bde0 (libc.so.6:mempcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547bc10 (libc.so.6:bcmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547ad00 (libc.so.6:strncmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547a800 (libc.so.6:strcmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547bd40 (libc.so.6:memset) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x54990f0 (libc.so.6:wcschr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547aca0 (libc.so.6:strnlen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547a870 (libc.so.6:strcspn) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547bfa0 (libc.so.6:strncasecmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547a840 (libc.so.6:strcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547c0e0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547ada0 (libc.so.6:strpbrk) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547a7c0 (libc.so.6:index) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547ac70 (libc.so.6:strlen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x54856c0 (libc.so.6:memrchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547bff0 (libc.so.6:strcasecmp_l) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547bbe0 (libc.so.6:memchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x5499eb0 (libc.so.6:wcslen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547b050 (libc.so.6:strspn) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547bf20 (libc.so.6:stpncpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547bef0 (libc.so.6:stpcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547d7f0 (libc.so.6:strchrnul) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x547c040 (libc.so.6:strncasecmp_l) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--978-- REDIR: 0x556b3c0 (libc.so.6:__strrchr_avx2) redirected to 0x4c32730 (rindex)
+--978-- REDIR: 0x5474070 (libc.so.6:malloc) redirected to 0x4c2faa0 (malloc)
+--978-- REDIR: 0x556b590 (libc.so.6:__strlen_avx2) redirected to 0x4c32cf0 (strlen)
+--978-- REDIR: 0x5567ba0 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x4c35e00 (bcmp)
+--978-- REDIR: 0x5546d60 (libc.so.6:__strcmp_ssse3) redirected to 0x4c33da0 (strcmp)
+--978-- REDIR: 0x556bad0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4c366e0 (memmove)
+--978-- REDIR: 0x547b590 (libc.so.6:__GI_strstr) redirected to 0x4c37760 (__strstr_sse2)
+--978-- REDIR: 0x4ecf240 (libstdc++.so.6:operator new[](unsigned long)) redirected to 0x4c30830 (operator new[](unsigned long))
+--978-- REDIR: 0x4ecf190 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4c30110 (operator new(unsigned long))
+--978-- REDIR: 0x4ecd310 (libstdc++.so.6:operator delete[](void*)) redirected to 0x4c316d0 (operator delete[](void*))
+--978-- REDIR: 0x5474950 (libc.so.6:free) redirected to 0x4c30cd0 (free)
+--978-- REDIR: 0x4ecd2e0 (libstdc++.so.6:operator delete(void*)) redirected to 0x4c311d0 (operator delete(void*))
+--978-- REDIR: 0x556bab0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4c37130 (mempcpy)
+==978== 
+==978== Process terminating with default action of signal 2 (SIGINT)
+==978==    at 0x4F62BF8: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::compare(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==978==    by 0x10C69A: bool std::operator< <char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x11A820: bool __gnu_cxx::__ops::_Iter_less_iter::operator()<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*) const (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x11A8BA: bool std::__lexicographical_compare_impl<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, __gnu_cxx::__ops::_Iter_less_iter>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, __gnu_cxx::__ops::_Iter_less_iter) (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x119DC1: bool std::__lexicographical_compare<false>::__lc<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*) (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x1182DA: bool std::__lexicographical_compare_aux<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*) (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x11671B: bool std::lexicographical_compare<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, __gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, __gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, __gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, __gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >) (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x1156D7: bool std::operator< <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x115362: Tuple::operator<(Tuple const&) const (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x1199F4: std::less<Tuple>::operator()(Tuple const&, Tuple const&) const (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x1186D4: std::_Rb_tree<Tuple, Tuple, std::_Identity<Tuple>, std::less<Tuple>, std::allocator<Tuple> >::_M_get_insert_unique_pos(Tuple const&) (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x116BCB: std::pair<std::_Rb_tree_iterator<Tuple>, bool> std::_Rb_tree<Tuple, Tuple, std::_Identity<Tuple>, std::less<Tuple>, std::allocator<Tuple> >::_M_insert_unique<Tuple const&>(Tuple const&) (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x115BD9: std::set<Tuple, std::less<Tuple>, std::allocator<Tuple> >::insert(Tuple const&) (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x11132A: Relation::addTuple(Tuple) (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x113A44: Relation::join(Relation) (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x11F7A8: myInterpreter::fixedpoint() (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x11EEB6: myInterpreter::readrules() (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x11D95A: myInterpreter::readin() (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x11D854: myInterpreter::myInterpreter(std::vector<Token, std::allocator<Token> >) (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978==    by 0x11CACB: main (in /mnt/c/Users/Taylor/Documents/My Docs/Winter 2019/CS 236/Lab 4/lab4)
+==978== 
+==978== HEAP SUMMARY:
+==978==     in use at exit: 97,098,927 bytes in 520,595 blocks
+==978==   total heap usage: 4,103,595 allocs, 3,583,000 frees, 1,124,325,995 bytes allocated
+==978== 
+==978== Searching for pointers to 520,595 not-freed blocks
+==978== Checked 106,639,576 bytes
+==978== 
+==978== LEAK SUMMARY:
+==978==    definitely lost: 0 bytes in 0 blocks
+==978==    indirectly lost: 0 bytes in 0 blocks
+==978==      possibly lost: 0 bytes in 0 blocks
+==978==    still reachable: 97,098,927 bytes in 520,595 blocks
+==978==         suppressed: 0 bytes in 0 blocks
+==978== Reachable blocks (those to which a pointer was found) are not shown.
+==978== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==978== 
+==978== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==978== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

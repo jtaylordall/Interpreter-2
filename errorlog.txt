@@ -1,0 +1,10 @@
+Rule Evaluation
+c(x) :- a(x,'a',y),b(o,j,z).
+  x='a'
+c(x) :- a(x,'a',y),b(o,j,z).
+
+Schemes populated after 2 passes through the Rules.
+
+Query Evaluation
+c(x)? Yes(1)
+  x='a'

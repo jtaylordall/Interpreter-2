@@ -1,0 +1,16 @@
+
+
+Schemes:
+  a(x,y,z)
+  b(x,y,z)
+  c(x)
+
+Facts:
+  a('a','a','a').
+  b('a','b','c').
+
+Rules:
+  c(x) :- a(x,'a',y), b(o,j,z).
+
+Queries:
+  c(x)?

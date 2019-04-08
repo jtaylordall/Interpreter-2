@@ -1,0 +1,16 @@
+Schemes:
+  X(A)
+  R(a,b,c,d,e)
+
+Facts:
+  X('1').
+  X('2').
+  X('3').
+  X('4').
+  X('5').
+
+Rules:
+  R(q,w,e,r,t) :- X(q), X(w), X(e), X(r), X(t).
+
+Queries:
+  R(A,B,C,D,E)?

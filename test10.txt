@@ -1,0 +1,19 @@
+Schemes:
+    f(A,B,C,D)
+
+Facts:
+    f('a','a','a','a').
+    f('b','c','d','e').
+    f('f','g','g','f').
+    f('y','g','x','y').
+    f('h','i','j','i').
+    f('k','l','k','l').
+    f('m','m','n','o').
+
+Rules:
+
+Queries:
+    f(A,B,Q,R)?
+    f(A,A,'n',B)?
+    f(A,'g',B,A)?
+    f(A,A,B,T)?
